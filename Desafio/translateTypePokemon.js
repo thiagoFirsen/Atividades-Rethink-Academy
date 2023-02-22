@@ -5,14 +5,14 @@ import { pokemons } from "./data.js";
 //Adicionando todos os types em uma unica lista
 let arrayOfTypes = [];
 
-const pokemonTypeEnglishList = (listOfPokemons) => {
+const listPokemonTypesIntoEnglish = (listOfPokemons) => {
   return pokemons.map((pokemon) => {
     arrayOfTypes.push(pokemon.type);
     return arrayOfTypes;
   });
 };
 
-pokemonTypeEnglishList(pokemons);
+listPokemonTypesIntoEnglish(pokemons);
 
 //Removendo array de array e transformando em array unico
 arrayOfTypes = arrayOfTypes.flat();
@@ -24,7 +24,7 @@ arrayOfTypes = [...new Set(arrayOfTypes)];
 console.log(arrayOfTypes);
 
 //Objeto traduzido
-const pokemonTypesInPortuguese = {
+const pokemonTypesIntoPortuguese = {
   normal: "normal",
   fire: "fogo",
   water: "água",
@@ -47,13 +47,13 @@ const pokemonTypesInPortuguese = {
 
 //Traduzindo array no objeto
 
-const translate = (listOfPokemonsTraduzidos) => {
+const translate = (listOfTranslatedPokemons) => {
   return pokemons.map((pokemon) => {
     for (let i = 0; i < pokemon.type.length; i++) {
-      pokemon.type[i] = listOfPokemonsTraduzidos[pokemon.type[i]];
+      pokemon.type[i] = listOfTranslatedPokemons[pokemon.type[i]];
     }
     return pokemon;
   });
 };
 
-console.log(translate(pokemonTypesInPortuguese));
+console.log(translate(pokemonTypesIntoPortuguese));
