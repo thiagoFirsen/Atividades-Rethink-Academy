@@ -1,12 +1,7 @@
 import { pokemons } from "./data.js";
 
-//Procurar um pokemon por nome
-const searchPokemon = (wantedPokemon) => {
-  return pokemons.find((pokemon) => {
-    if (pokemon.name === wantedPokemon) {
-      return pokemon;
-    }
-  });
+const pokemonFound = (wantedPokemon) => {
+  return pokemons.find((pokemon) => pokemon.name === wantedPokemon);
 };
 
-console.log(searchPokemon("bulbasaur"));
+console.log(pokemonFound("bulbasaur"));
